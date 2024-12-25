@@ -24,6 +24,10 @@ This program is a translator that translate every word in a sentence to pirate l
 ## Usage
 To use the program, you can run the program in your terminal, which will open a graphical interface where you can select the input file. The program will automatically generate the translated output file in the same directory as the input file.
 
+`*.txt >>> *.arrr`
+
+`*.arrr >>> *.txt`
+
 ## License
 This program is licensed under the MIT license.
 
