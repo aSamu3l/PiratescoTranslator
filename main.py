@@ -1,6 +1,7 @@
 import os
 import customtkinter as ctk
 from tkinter import filedialog, messagebox
+from PIL import Image
 
 def load_alphabet():
     return {
@@ -82,17 +83,28 @@ def select_file():
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
-app = ctk.CTk()
-app.title("Piratesco Translator")
-app.geometry("500x300")
+root = ctk.CTk()
+root.title("Piratesco Translator")
+root.geometry("500x200")
+root.resizable(False, False)
 
-label = ctk.CTkLabel(app, text="Select the file to translate:", font=("Arial", 16))
+label = ctk.CTkLabel(root, text="Select the file to translate:", font=("Arial", 16))
 label.pack(pady=20)
 
-select_button = ctk.CTkButton(app, text="Select file", command=select_file)
+select_button = ctk.CTkButton(root, text="Select file", command=select_file)
 select_button.pack(pady=10)
 
-exit_button = ctk.CTkButton(app, text="Exit", command=app.quit)
+exit_button = ctk.CTkButton(root, text="Exit", command=root.quit)
 exit_button.pack(pady=10)
 
-app.mainloop()
+arrpheus = ctk.CTkImage(Image.open("img/arrpheus.png"), size=(100, 100))
+arrpheus_label = ctk.CTkLabel(root, image=arrpheus, text="", fg_color=None)
+arrpheus_label.pack()
+arrpheus_label.place(x=50, y=50)
+
+doubloon = ctk.CTkImage(Image.open("img/doubloon.png"), size=(100, 110))
+doubloon_label = ctk.CTkLabel(root, image=doubloon, text="", fg_color=None)
+doubloon_label.pack()
+doubloon_label.place(x=350, y=60)
+
+root.mainloop()
